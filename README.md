@@ -3,4 +3,4 @@ This project is a desktop app which integrate with the open source project "Flig
 
 There are 2 main ways to controll your plain .
 # Manual controll:
-https://github.com/TomerOvadia1/FlightGear_Controller/blob/master/user_manual/Pic1.jpg?raw=true
+![alt text](https://github.com/TomerOvadia1/FlightGear_Controller/blob/master/user_manual/Pic1.jpg?raw=true)
