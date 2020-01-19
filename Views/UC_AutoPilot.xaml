@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="FlightSimulator.Views.UC_AutoPilot"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulator.Views"
+             mc:Ignorable="d" 
+              d:DesignHeight="600" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="TB_Commands" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"
+                         TextWrapping="Wrap" Text="{Binding Instructs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="5" AcceptsReturn="True">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Background" Value="White"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsRed, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Value="True">
+                            <Setter Property="Background" Value="Pink"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Button x:Name="btnOk" Content = "OK" Command="{Binding sendInstructs}" Grid.Row="1" Grid.Column="1"  />
+        <Button x:Name="btnClear" Content = "Clear" Command="{Binding clearCmd}"  Grid.Row="1" Grid.Column="3"/>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="FlightSimulator.Views.Windows.FlightBoardWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulator.Views.Windows"
+             xmlns:Views="clr-namespace:FlightSimulator.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Views:FlightBoard Grid.Row="1"/>
+        <StackPanel Grid.Row="0">
+            <Button Content="connect" Command="{Binding ConnectCmd}" Width="50" HorizontalContentAlignment="Center" Margin="0,0,0,0"></Button>
+            <Button Content="settings" Command="{Binding OpenSettings}" Width="50" Margin="120,-20,0,0"></Button>
+            <Button Content="disconnect" Command="{Binding Exit}" Width="62" Margin="250,-20,0,0" ></Button>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,24 @@
+﻿<Window x:Class="FlightSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulator"
+        xmlns:windows="clr-namespace:FlightSimulator.Views.Windows"
+        xmlns:views="clr-namespace:FlightSimulator.Views"
+        MinHeight="600" MinWidth="1000"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <views:UC_Flight Grid.Column="2" />
+        <windows:FlightBoardWindow Grid.Column="0" Loaded="FlightBoardWindow_Loaded"  />
+    </Grid>
+    
+</Window>
